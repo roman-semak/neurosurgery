@@ -12,7 +12,7 @@ export function AboutTeaserSection() {
         <div className="relative mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-2xl">
           <Image
             src="/images/portrait-placeholder.svg"
-            alt={DOCTOR.portraitAlt}
+            alt={DOCTOR.portraitAlt.teaser}
             fill
             sizes="(min-width: 1024px) 320px, 60vw"
             className="object-cover"

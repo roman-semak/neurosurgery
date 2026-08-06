@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800" role="img" aria-label="Місце під фото лікаря">
-  <rect width="640" height="800" fill="#e7eef2"/>
-  <rect x="1" y="1" width="638" height="798" fill="none" stroke="#9db4c0" stroke-width="2" stroke-dasharray="10 8"/>
-  <circle cx="320" cy="300" r="110" fill="#c3d5dd"/>
-  <path d="M150 640c0-110 76-190 170-190s170 80 170 190" fill="#c3d5dd"/>
-  <text x="320" y="740" font-family="sans-serif" font-size="22" fill="#4a6472" text-anchor="middle">Фото лікаря — портрет</text>
+  <rect width="640" height="800" fill="hsl(168 72% 14%)"/>
+  <rect x="1" y="1" width="638" height="798" fill="none" stroke="hsl(160 52% 75% / 0.35)" stroke-width="2" stroke-dasharray="10 8"/>
+  <circle cx="320" cy="300" r="110" fill="hsl(160 52% 75% / 0.55)"/>
+  <path d="M150 640c0-110 76-190 170-190s170 80 170 190" fill="hsl(160 52% 75% / 0.55)"/>
+  <text x="320" y="740" font-family="sans-serif" font-size="22" fill="hsl(160 52% 75%)" text-anchor="middle">Фото лікаря — портрет</text>
 </svg>

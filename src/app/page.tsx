@@ -9,6 +9,9 @@ import { SITE_DESCRIPTION } from "@/lib/content/site";
 
 export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function HomePage() {

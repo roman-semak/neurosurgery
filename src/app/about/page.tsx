@@ -10,20 +10,28 @@ import {
   PUBLICATIONS,
   WHY_NEUROSURGERY,
 } from "@/lib/content/doctor";
+import { JsonLd } from "@/components/seo/json-ld";
+import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
   title: "Про лікаря",
   description: `Біографія, освіта та досвід лікаря ${DOCTOR.fullName}, ${DOCTOR.specialization.toLowerCase()}.`,
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20">
+      <JsonLd
+        data={buildBreadcrumbSchema([{ name: "Про лікаря", path: "/about" }])}
+      />
       <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
         <div className="relative aspect-[4/5] w-40 shrink-0 overflow-hidden rounded-2xl sm:w-48">
           <Image
             src="/images/portrait-placeholder.svg"
-            alt={DOCTOR.portraitAlt}
+            alt={DOCTOR.portraitAlt.about}
             fill
             sizes="192px"
             className="object-cover"

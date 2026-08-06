@@ -1,10 +1,11 @@
 import { DOCTOR } from "@/lib/content/doctor";
 import { CONTACT, SITE_URL, SOCIALS } from "@/lib/content/site";
+import { ORGANIZATION_SCHEMA_ID } from "@/lib/seo/organization-schema";
 
 export function buildPhysicianSchema() {
   return {
-    "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": `${SITE_URL}/#physician`,
     name: DOCTOR.fullName,
     image: `${SITE_URL}/images/portrait-placeholder.svg`,
     description: DOCTOR.heroTagline,
@@ -18,5 +19,6 @@ export function buildPhysicianSchema() {
       addressCountry: "UA",
     },
     sameAs: SOCIALS.map((social) => social.href),
+    worksFor: { "@id": ORGANIZATION_SCHEMA_ID },
   };
 }

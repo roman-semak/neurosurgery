@@ -25,7 +25,7 @@ export function HeroSection() {
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
           <Image
             src="/images/hero-placeholder.svg"
-            alt={DOCTOR.portraitAlt}
+            alt={DOCTOR.portraitAlt.hero}
             fill
             priority
             sizes="(min-width: 1024px) 40vw, 90vw"

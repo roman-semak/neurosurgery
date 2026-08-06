@@ -3,16 +3,24 @@ import type { Metadata } from "next";
 import { AppointmentForm } from "@/components/appointment/appointment-form";
 import { LocationMap } from "@/components/shared/location-map";
 import { CONTACT } from "@/lib/content/site";
+import { JsonLd } from "@/components/seo/json-ld";
+import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
   title: "Запис на консультацію",
   description:
     "Заповніть форму, щоб записатися на консультацію. Ми зв'яжемось з вами для узгодження зручного часу.",
+  alternates: {
+    canonical: "/appointment",
+  },
 };
 
 export default function AppointmentPage() {
   return (
     <div className="relative mx-auto max-w-3xl overflow-hidden px-4 py-14 sm:px-6 sm:py-20">
+      <JsonLd
+        data={buildBreadcrumbSchema([{ name: "Запис на консультацію", path: "/appointment" }])}
+      />
       <div
         className="absolute -top-16 left-1/2 -z-10 size-96 -translate-x-1/2 rounded-full bg-accent/30 blur-3xl"
         aria-hidden="true"
