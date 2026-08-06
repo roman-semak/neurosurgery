@@ -8,10 +8,10 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/60 bg-muted/40">
+    <footer className="border-t border-white/10 bg-deep">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-heading text-lg font-semibold text-primary">
+          <p className="font-heading text-lg font-semibold text-accent-bright">
             {SITE_NAME}
           </p>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
@@ -50,7 +50,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={messenger.name}
-                className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:border-primary hover:text-primary"
+                className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:border-accent-bright hover:text-accent-bright"
               >
                 {messenger.name}
               </a>
@@ -86,7 +86,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:border-primary hover:text-primary"
+                className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:border-accent-bright hover:text-accent-bright"
               >
                 {social.name}
               </a>

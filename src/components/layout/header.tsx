@@ -22,11 +22,11 @@ export function Header() {
   const primaryNavItems = NAV_ITEMS.filter((item) => item.href !== "/appointment");
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-white/5 backdrop-blur-glass">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
-          className="font-heading text-lg font-semibold text-primary"
+          className="font-heading text-lg font-semibold text-accent-bright"
         >
           {SITE_NAME}
         </Link>
@@ -44,7 +44,7 @@ export function Header() {
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
-                  isActive && "text-primary"
+                  isActive && "text-accent-bright"
                 )}
               >
                 {item.label}
@@ -82,7 +82,7 @@ export function Header() {
                     onClick={() => setOpen(false)}
                     className={cn(
                       "rounded-lg px-3 py-3 text-base font-medium text-foreground hover:bg-muted",
-                      isActive && "bg-accent text-primary"
+                      isActive && "bg-accent/15 text-accent-bright"
                     )}
                   >
                     {item.label}

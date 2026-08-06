@@ -101,11 +101,11 @@ export default function PrivacyPage() {
           </h2>
           <p className="mt-3">
             З питань обробки персональних даних звертайтесь: {" "}
-            <a href={`mailto:${CONTACT.email}`} className="font-medium text-primary hover:underline">
+            <a href={`mailto:${CONTACT.email}`} className="font-medium text-accent-bright hover:underline">
               {CONTACT.email}
             </a>{" "}
             або за телефоном {" "}
-            <a href={CONTACT.phoneHref} className="font-medium text-primary hover:underline">
+            <a href={CONTACT.phoneHref} className="font-medium text-accent-bright hover:underline">
               {CONTACT.phone}
             </a>
             .

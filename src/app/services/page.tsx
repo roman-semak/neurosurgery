@@ -50,7 +50,7 @@ export default function ServicesPage() {
           {PROCEDURES.map((procedure) => (
             <li
               key={procedure}
-              className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+              className="flex items-start gap-3 rounded-2xl border border-white/15 bg-white/5 p-4"
             >
               <CheckIcon className="mt-0.5 size-5 shrink-0 text-secondary" aria-hidden="true" />
               <span className="text-base text-foreground">{procedure}</span>
@@ -67,7 +67,7 @@ export default function ServicesPage() {
           {PATIENT_JOURNEY.map((step) => (
             <li
               key={step.step}
-              className="flex flex-col gap-2 rounded-xl border border-border bg-card p-4"
+              className="flex flex-col gap-2 rounded-2xl border border-white/15 bg-white/5 p-4"
             >
               <span
                 aria-hidden="true"
@@ -82,7 +82,7 @@ export default function ServicesPage() {
         </ol>
       </section>
 
-      <section aria-labelledby="prepare-heading" className="mt-14 rounded-2xl bg-muted/50 p-6 sm:p-8">
+      <section aria-labelledby="prepare-heading" className="mt-14 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-glass sm:p-8">
         <h2 id="prepare-heading" className="font-heading text-2xl font-semibold text-foreground">
           Що взяти на консультацію
         </h2>

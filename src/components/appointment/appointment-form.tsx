@@ -81,7 +81,7 @@ export function AppointmentForm() {
       <Alert
         role="status"
         aria-live="polite"
-        className="border-success/30 bg-success/5 text-left"
+        className="border-accent-bright/30 bg-white/10 text-left backdrop-blur-glass"
       >
         <CheckCircle2Icon className="text-success" aria-hidden="true" />
         <AlertTitle className="text-success">Заявку надіслано</AlertTitle>

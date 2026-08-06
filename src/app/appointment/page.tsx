@@ -12,7 +12,11 @@ export const metadata: Metadata = {
 
 export default function AppointmentPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
+    <div className="relative mx-auto max-w-3xl overflow-hidden px-4 py-14 sm:px-6 sm:py-20">
+      <div
+        className="absolute -top-16 left-1/2 -z-10 size-96 -translate-x-1/2 rounded-full bg-accent/30 blur-3xl"
+        aria-hidden="true"
+      />
       <div className="mx-auto max-w-xl text-center">
         <h1 className="font-heading text-4xl font-semibold text-foreground sm:text-5xl">
           Запис на консультацію
@@ -21,14 +25,14 @@ export default function AppointmentPage() {
           Заповніть форму нижче — ми зателефонуємо або напишемо вам, щоб
           узгодити зручний день і час консультації. Якщо зручніше, ви також
           можете зателефонувати нам напряму: {" "}
-          <a href={CONTACT.phoneHref} className="font-medium text-primary hover:underline">
+          <a href={CONTACT.phoneHref} className="font-medium text-accent-bright hover:underline">
             {CONTACT.phone}
           </a>
           .
         </p>
       </div>
 
-      <div className="mt-10 rounded-2xl border border-border bg-card p-6 sm:p-8">
+      <div className="mt-10 rounded-3xl border border-white/20 bg-white/10 p-6 shadow-glass backdrop-blur-glass sm:p-8">
         <AppointmentForm />
       </div>
 

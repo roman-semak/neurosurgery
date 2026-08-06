@@ -7,7 +7,7 @@ export function LocationMap({ query, title }: LocationMapProps) {
   const src = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border">
+    <div className="overflow-hidden rounded-3xl border border-white/15">
       <iframe
         src={src}
         title={title}

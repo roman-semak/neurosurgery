@@ -4,9 +4,13 @@ import { DOCTOR } from "@/lib/content/doctor";
 
 export function HeroSection() {
   return (
-    <section className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-28">
+    <section className="relative mx-auto grid max-w-6xl gap-10 overflow-hidden px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-28">
+      <div
+        className="absolute -top-24 -right-24 -z-10 size-96 rounded-full bg-accent/30 blur-3xl"
+        aria-hidden="true"
+      />
       <div className="order-2 flex flex-col items-start gap-6 lg:order-1">
-        <p className="rounded-full bg-accent px-4 py-1.5 text-sm font-medium text-accent-foreground">
+        <p className="rounded-full bg-accent/15 px-4 py-1.5 text-sm font-medium text-accent-bright">
           {DOCTOR.specialization}
         </p>
         <h1 className="font-heading text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
