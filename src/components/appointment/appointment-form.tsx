@@ -211,7 +211,7 @@ export function AppointmentForm() {
           </FieldContent>
         </Field>
 
-        <Button type="submit" size="lg" className="h-12 px-6 text-base" disabled={isSubmitting}>
+        <Button type="submit" size="lg" className="h-12 w-full px-6 text-base" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
               <Loader2Icon className="animate-spin" aria-hidden="true" />

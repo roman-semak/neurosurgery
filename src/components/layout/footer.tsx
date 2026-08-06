@@ -95,7 +95,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border/60 px-4 py-5 text-center text-xs text-muted-foreground sm:px-6">
+      <div className="border-t border-border/60 px-4 pt-5 pb-24 text-center text-xs text-muted-foreground sm:px-6 sm:pb-5">
         © {year} {SITE_NAME}. Усі права захищено.
       </div>
     </footer>

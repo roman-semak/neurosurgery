@@ -26,7 +26,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
-          className="font-heading text-lg font-semibold text-accent-bright"
+          className="min-w-0 flex-1 truncate font-heading text-lg font-semibold text-accent-bright"
         >
           {SITE_NAME}
         </Link>
@@ -58,7 +58,7 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="size-11 md:hidden"
               aria-label="Відкрити меню"
             >
               <MenuIcon aria-hidden="true" />

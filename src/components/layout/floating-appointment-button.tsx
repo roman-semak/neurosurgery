@@ -18,10 +18,10 @@ export function FloatingAppointmentButton() {
       <Button
         asChild
         size="lg"
-        className="h-12 rounded-full px-5 text-base shadow-lg"
+        className="h-14 gap-2 rounded-full border-2 border-accent-bright/50 px-6 text-base font-semibold shadow-glow ring-4 ring-accent/20 transition-transform hover:scale-105"
       >
         <Link href="/appointment">
-          <CalendarIcon aria-hidden="true" />
+          <CalendarIcon className="size-5" aria-hidden="true" />
           Записатися
         </Link>
       </Button>
