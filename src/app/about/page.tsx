@@ -30,7 +30,7 @@ export default function AboutPage() {
       <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
         <div className="relative aspect-[4/5] w-40 shrink-0 overflow-hidden rounded-2xl sm:w-48">
           <Image
-            src="/images/portrait-placeholder.svg"
+            src="/images/photo_2021-05-30_08-24-29.jpg"
             alt={DOCTOR.portraitAlt.about}
             fill
             sizes="192px"

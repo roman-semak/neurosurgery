@@ -7,7 +7,7 @@ export function buildPhysicianSchema() {
     "@type": "Physician",
     "@id": `${SITE_URL}/#physician`,
     name: DOCTOR.fullName,
-    image: `${SITE_URL}/images/portrait-placeholder.svg`,
+    image: `${SITE_URL}/images/photo_2021-05-30_08-24-29.jpg`,
     description: DOCTOR.heroTagline,
     medicalSpecialty: "Neurosurgery",
     url: SITE_URL,
