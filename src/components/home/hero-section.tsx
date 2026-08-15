@@ -24,7 +24,7 @@ export function HeroSection() {
       <div className="order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none">
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
           <Image
-            src="/images/photo_2021-05-30_08-24-29.jpg"
+            src="/images/doctor-portrait.jpg"
             alt={DOCTOR.portraitAlt.hero}
             fill
             priority

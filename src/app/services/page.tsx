@@ -6,6 +6,7 @@ import {
   CONDITIONS,
   PATIENT_JOURNEY,
   PROCEDURES,
+  TREATED_CONDITIONS,
   WHAT_TO_BRING,
 } from "@/lib/content/services";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -62,6 +63,23 @@ export default function ServicesPage() {
             >
               <CheckIcon className="mt-0.5 size-5 shrink-0 text-secondary" aria-hidden="true" />
               <span className="text-base text-foreground">{procedure}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="treated-conditions-heading" className="mt-14">
+        <h2 id="treated-conditions-heading" className="font-heading text-2xl font-semibold text-foreground">
+          Хвороби, які лікує відділення
+        </h2>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+          {TREATED_CONDITIONS.map((condition) => (
+            <li
+              key={condition}
+              className="flex items-start gap-3 rounded-2xl border border-white/15 bg-white/5 p-4"
+            >
+              <CheckIcon className="mt-0.5 size-5 shrink-0 text-secondary" aria-hidden="true" />
+              <span className="text-base text-foreground">{condition}</span>
             </li>
           ))}
         </ul>

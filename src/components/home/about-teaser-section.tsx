@@ -11,7 +11,7 @@ export function AboutTeaserSection() {
       <div className="grid gap-10 lg:grid-cols-[minmax(0,320px)_1fr] lg:items-center lg:gap-16">
         <div className="relative mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-2xl">
           <Image
-            src="/images/photo_2021-05-30_08-24-29.jpg"
+            src="/images/doctor-portrait.jpg"
             alt={DOCTOR.portraitAlt.teaser}
             fill
             sizes="(min-width: 1024px) 320px, 60vw"
