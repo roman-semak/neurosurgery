@@ -9,7 +9,7 @@ export function TestimonialsSection() {
         aria-hidden="true"
       />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <h2 className="text-center font-heading text-3xl font-semibold text-foreground sm:text-4xl">
+        <h2 className="text-center font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Відгуки пацієнтів
         </h2>
 

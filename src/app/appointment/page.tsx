@@ -26,7 +26,7 @@ export default function AppointmentPage() {
         aria-hidden="true"
       />
       <div className="mx-auto max-w-xl text-center">
-        <h1 className="font-heading text-4xl font-semibold text-foreground sm:text-5xl">
+        <h1 className="font-heading text-[28px] font-semibold text-foreground sm:text-[34px]">
           Запис на консультацію
         </h1>
         <p className="mt-4 text-base text-muted-foreground sm:text-lg">
@@ -40,12 +40,12 @@ export default function AppointmentPage() {
         </p>
       </div>
 
-      <div className="mt-10 rounded-3xl border border-white/20 bg-white/10 p-6 shadow-glass backdrop-blur-glass sm:p-8">
+      <div className="mt-10 rounded-panel border border-white/20 bg-white/10 p-6 shadow-glass backdrop-blur-glass sm:p-8">
         <AppointmentForm />
       </div>
 
       <section aria-labelledby="location-heading" className="mt-14">
-        <h2 id="location-heading" className="font-heading text-2xl font-semibold text-foreground">
+        <h2 id="location-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Як нас знайти
         </h2>
         <p className="mt-3 text-base text-muted-foreground">{CONTACT.address}</p>

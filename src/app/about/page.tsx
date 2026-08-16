@@ -28,7 +28,7 @@ export default function AboutPage() {
         data={buildBreadcrumbSchema([{ name: "Про лікаря", path: "/about" }])}
       />
       <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
-        <div className="relative aspect-[4/5] w-40 shrink-0 overflow-hidden rounded-2xl sm:w-48">
+        <div className="relative aspect-[4/5] w-40 shrink-0 overflow-hidden rounded-card sm:w-48">
           <Image
             src="/images/doctor-portrait.jpg"
             alt={DOCTOR.portraitAlt.about}
@@ -38,7 +38,7 @@ export default function AboutPage() {
           />
         </div>
         <div>
-          <h1 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
+          <h1 className="font-heading text-[28px] font-semibold text-foreground sm:text-[34px]">
             {DOCTOR.fullName}
           </h1>
           <p className="mt-2 text-base text-muted-foreground sm:text-lg">
@@ -48,7 +48,7 @@ export default function AboutPage() {
       </div>
 
       <section aria-labelledby="biography-heading" className="mt-12">
-        <h2 id="biography-heading" className="font-heading text-2xl font-semibold text-foreground">
+        <h2 id="biography-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Біографія
         </h2>
         <div className="mt-4 flex flex-col gap-4 text-base leading-relaxed text-muted-foreground">
@@ -59,7 +59,7 @@ export default function AboutPage() {
       </section>
 
       <section aria-labelledby="education-heading" className="mt-12">
-        <h2 id="education-heading" className="font-heading text-2xl font-semibold text-foreground">
+        <h2 id="education-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Освіта та стажування
         </h2>
         <ul className="mt-4 flex flex-col gap-4">
@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       <section aria-labelledby="experience-heading" className="mt-12">
-        <h2 id="experience-heading" className="font-heading text-2xl font-semibold text-foreground">
+        <h2 id="experience-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Досвід роботи
         </h2>
         <ul className="mt-4 flex flex-col gap-4">
@@ -89,7 +89,7 @@ export default function AboutPage() {
       </section>
 
       <section aria-labelledby="publications-heading" className="mt-12">
-        <h2 id="publications-heading" className="font-heading text-2xl font-semibold text-foreground">
+        <h2 id="publications-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Наукова діяльність та публікації
         </h2>
         <ul className="mt-4 flex list-disc flex-col gap-2 pl-5 text-base text-muted-foreground">
@@ -100,7 +100,7 @@ export default function AboutPage() {
       </section>
 
       <section aria-labelledby="associations-heading" className="mt-12">
-        <h2 id="associations-heading" className="font-heading text-2xl font-semibold text-foreground">
+        <h2 id="associations-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Членство в асоціаціях
         </h2>
         <ul className="mt-4 flex list-disc flex-col gap-2 pl-5 text-base text-muted-foreground">
@@ -110,8 +110,8 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <section aria-labelledby="why-heading" className="mt-12 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-glass sm:p-8">
-        <h2 id="why-heading" className="font-heading text-2xl font-semibold text-foreground">
+      <section aria-labelledby="why-heading" className="mt-12 rounded-panel border border-white/20 bg-white/10 p-6 backdrop-blur-glass sm:p-8">
+        <h2 id="why-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Чому нейрохірургія
         </h2>
         <p className="mt-4 text-base leading-relaxed text-muted-foreground">

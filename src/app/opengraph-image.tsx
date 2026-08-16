@@ -19,7 +19,7 @@ export default function Image() {
           justifyContent: "space-between",
           padding: "70px 80px",
           background:
-            "linear-gradient(135deg, hsl(170, 86%, 11%) 0%, hsl(168, 72%, 14%) 100%)",
+            "linear-gradient(135deg, #06192e 0%, #0a2540 100%)",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", maxWidth: 680 }}>
@@ -30,7 +30,7 @@ export default function Image() {
               fontWeight: 600,
               letterSpacing: 3,
               textTransform: "uppercase",
-              color: "hsl(160, 51%, 58%)",
+              color: "#5dcaa5",
             }}
           >
             Нейрохірург
@@ -51,7 +51,7 @@ export default function Image() {
             style={{
               display: "flex",
               fontSize: 28,
-              color: "hsl(160, 52%, 75%)",
+              color: "#5dcaa5",
               marginTop: 28,
               maxWidth: 620,
               lineHeight: 1.4,
@@ -75,7 +75,7 @@ export default function Image() {
               width: 170,
               height: 170,
               borderRadius: "50%",
-              background: "hsl(160, 52%, 75%)",
+              background: "#5dcaa5",
             }}
           />
           <div
@@ -84,7 +84,7 @@ export default function Image() {
               width: 240,
               height: 150,
               borderRadius: "120px 120px 0 0",
-              background: "hsl(160, 52%, 75%)",
+              background: "#5dcaa5",
               marginTop: -46,
             }}
           />

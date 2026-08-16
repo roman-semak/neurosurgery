@@ -5,7 +5,7 @@ export function HowWeHelpSection() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
+        <h2 className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Чим допомагаю
         </h2>
         <p className="mt-3 text-base text-muted-foreground sm:text-lg">

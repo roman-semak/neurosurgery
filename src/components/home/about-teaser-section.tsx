@@ -9,7 +9,7 @@ export function AboutTeaserSection() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
       <div className="grid gap-10 lg:grid-cols-[minmax(0,320px)_1fr] lg:items-center lg:gap-16">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-2xl">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-xs overflow-hidden rounded-card">
           <Image
             src="/images/doctor-portrait.jpg"
             alt={DOCTOR.portraitAlt.teaser}
@@ -20,7 +20,7 @@ export function AboutTeaserSection() {
         </div>
 
         <div>
-          <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
+          <h2 className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
             Про лікаря
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">

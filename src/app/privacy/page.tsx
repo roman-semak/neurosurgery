@@ -21,7 +21,7 @@ export default function PrivacyPage() {
           { name: "Політика конфіденційності", path: "/privacy" },
         ])}
       />
-      <h1 className="font-heading text-4xl font-semibold text-foreground sm:text-5xl">
+      <h1 className="font-heading text-[28px] font-semibold text-foreground sm:text-[34px]">
         Політика конфіденційності
       </h1>
       <p className="mt-4 text-sm text-muted-foreground">

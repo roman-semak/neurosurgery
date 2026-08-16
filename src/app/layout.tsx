@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Lora } from "next/font/google";
+import { Commissioner, Manrope } from "next/font/google";
 
 import "./globals.css";
 import { Header } from "@/components/layout/header";
@@ -10,13 +10,15 @@ import { buildPhysicianSchema } from "@/lib/seo/physician-schema";
 import { buildOrganizationSchema } from "@/lib/seo/organization-schema";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/content/site";
 
-const inter = Inter({
+const commissioner = Commissioner({
   subsets: ["latin", "cyrillic"],
+  weight: ["400", "500"],
   variable: "--font-sans",
 });
 
-const lora = Lora({
+const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
+  weight: ["600", "700"],
   variable: "--font-heading",
 });
 
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a3d33",
+  themeColor: "#0a2540",
   colorScheme: "dark",
 };
 
@@ -58,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   };
 
   return (
-    <html lang="uk" className={`${inter.variable} ${lora.variable} h-full antialiased`}>
+    <html lang="uk" className={`${commissioner.variable} ${manrope.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <JsonLd data={graphSchema} />
         <a
