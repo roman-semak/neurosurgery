@@ -10,7 +10,7 @@ type PatientPathProps = {
 
 export function PatientPath({ steps }: PatientPathProps) {
   return (
-    <ol className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+    <ol className="relative grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-5">
       <svg
         aria-hidden="true"
         className="pointer-events-none absolute top-4 right-4 left-4 -z-10 hidden h-1 w-[calc(100%-2rem)] lg:block"
@@ -35,7 +35,7 @@ export function PatientPath({ steps }: PatientPathProps) {
       {steps.map((item) => (
         <li
           key={item.step}
-          className="flex flex-col gap-2 rounded-card border border-white/15 bg-white/5 p-4"
+          className="flex h-full flex-col gap-2 rounded-card border border-white/15 bg-white/5 p-4"
         >
           <span
             aria-hidden="true"

@@ -13,13 +13,13 @@ export function TrustStats({ stats }: TrustStatsProps) {
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="rounded-card border border-white/15 bg-white/5 p-4 text-center backdrop-blur-glass sm:text-left"
+          className="rounded-[18px] border border-white/[0.14] bg-white/[0.07] p-4 backdrop-blur-glass"
         >
           <dt className="sr-only">{stat.label}</dt>
-          <dd className="font-heading text-3xl font-semibold text-accent-bright sm:text-4xl">
+          <dd className="font-heading text-[24px] leading-none font-bold text-ink-heading sm:text-[30px] lg:text-[36px]">
             {stat.value}
           </dd>
-          <dd className="mt-1 text-[11.5px] uppercase tracking-[1.6px] text-ink-muted">
+          <dd className="mt-1.5 text-[13px] text-ink-muted">
             {stat.label}
           </dd>
         </div>

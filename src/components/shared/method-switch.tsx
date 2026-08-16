@@ -22,11 +22,11 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
   const current = methods.find((item) => item.method === active) ?? methods[0];
 
   return (
-    <div className="glass p-5 sm:p-6">
+    <div className="glass grid overflow-hidden gap-5 p-5 sm:p-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
       <div
         role="tablist"
         aria-label="Метод лікування"
-        className="flex gap-2 rounded-lg bg-deep/60 p-1"
+        className="flex max-w-105 gap-2 rounded-lg bg-deep/60 p-1"
       >
         {methods.map((item) => (
           <button
@@ -48,7 +48,7 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
       </div>
 
       {current ? (
-        <div className="mt-5">
+        <div>
           <p className="text-base text-ink-body">{current.description}</p>
           <ul className="mt-4 flex flex-col gap-2">
             {current.procedures.map((procedure) => (

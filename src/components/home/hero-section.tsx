@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { CircleOfWillis } from "@/components/vessels/circle-of-willis";
+import { Button } from "@/components/ui/button";
 import { DOCTOR } from "@/lib/content/doctor";
 
 export function HeroSection() {
@@ -11,12 +13,21 @@ export function HeroSection() {
         <p className="rounded-full bg-accent/15 px-4 py-1.5 text-sm font-medium text-accent-bright">
           {DOCTOR.specialization}
         </p>
-        <h1 className="font-heading text-[28px] font-semibold leading-tight tracking-[-0.5px] text-foreground sm:text-[34px]">
+        <h1 className="font-heading text-[34px] font-semibold leading-[1.08] tracking-[-1px] text-balance text-foreground sm:text-[46px] lg:text-[60px]">
           {DOCTOR.fullName}
         </h1>
-        <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
+        <p className="max-w-75 text-base leading-relaxed text-pretty text-muted-foreground sm:max-w-105 sm:text-[17px] lg:max-w-115 lg:text-lg">
           {DOCTOR.heroTagline}
         </p>
+
+        <div className="flex w-full flex-col gap-2.5 sm:w-auto sm:flex-row">
+          <Button asChild size="lg" className="min-h-13 w-full shadow-glow sm:w-auto">
+            <Link href="/appointment">Записатися на консультацію</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg" className="min-h-13 w-full sm:w-auto">
+            <Link href="/about">Про лікаря</Link>
+          </Button>
+        </div>
       </div>
 
       <div className="order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none">
