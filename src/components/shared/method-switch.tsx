@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { EndovascularAccess } from "@/components/vessels/endovascular-access";
+import { MicrosurgicalClip } from "@/components/vessels/microsurgical-clip";
 import { cn } from "@/lib/utils";
 
 type TreatmentMethod = {
@@ -22,11 +24,11 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
   const current = methods.find((item) => item.method === active) ?? methods[0];
 
   return (
-    <div className="glass grid overflow-hidden gap-5 p-5 sm:p-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-8">
+    <div>
       <div
         role="tablist"
         aria-label="Метод лікування"
-        className="flex max-w-105 gap-2 rounded-lg bg-deep/60 p-1"
+        className="mb-3.5 flex max-w-105 gap-2 rounded-lg border border-white/12 bg-white/6 p-1"
       >
         {methods.map((item) => (
           <button
@@ -48,18 +50,28 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
       </div>
 
       {current ? (
-        <div>
-          <p className="text-base text-ink-body">{current.description}</p>
-          <ul className="mt-4 flex flex-col gap-2">
-            {current.procedures.map((procedure) => (
-              <li
-                key={procedure}
-                className="rounded-[14px] border border-white/15 bg-white/5 px-4 py-3 text-sm text-foreground"
-              >
-                {procedure}
-              </li>
-            ))}
-          </ul>
+        <div className="glass grid overflow-hidden lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="flex items-center bg-deep px-0 py-2">
+            {active === "endovascular" ? (
+              <EndovascularAccess className="h-auto w-full" />
+            ) : (
+              <MicrosurgicalClip className="h-auto w-full" />
+            )}
+          </div>
+
+          <div className="p-5 sm:p-6">
+            <p className="text-base text-ink-body">{current.description}</p>
+            <ul className="mt-4 flex flex-col gap-2">
+              {current.procedures.map((procedure) => (
+                <li
+                  key={procedure}
+                  className="rounded-[14px] border border-white/15 bg-white/5 px-4 py-3 text-sm text-foreground"
+                >
+                  {procedure}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       ) : null}
     </div>

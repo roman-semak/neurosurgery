@@ -20,6 +20,7 @@ export function Aneurysm({ animated = true, ...props }: VesselProps) {
         </filter>
       </defs>
 
+      {/* світний підшар судини — пульсує */}
       <path
         d="M10,72 C70,72 96,66 120,60"
         fill="none"
@@ -40,6 +41,7 @@ export function Aneurysm({ animated = true, ...props }: VesselProps) {
         strokeLinecap="round"
       />
 
+      {/* мішечок аневризми: ореол дихає — це і є акцент кадру */}
       <circle
         cx={175}
         cy={26}
@@ -51,6 +53,7 @@ export function Aneurysm({ animated = true, ...props }: VesselProps) {
       />
       <path d="M158,44 C158,16 196,14 194,42" fill="#ff6b6b" stroke="#ff6b6b" strokeWidth={4} />
 
+      {/* пунктирне кільце-виноска повільно обертається */}
       <circle
         cx={176}
         cy={26}

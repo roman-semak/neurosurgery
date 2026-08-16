@@ -16,9 +16,11 @@ export function Avm({ animated = true, ...props }: VesselProps) {
         </filter>
       </defs>
 
+      {/* приносна артерія і відвідна вена */}
       <path d="M6,40 C50,40 80,52 110,58" fill="none" stroke="#e63946" strokeWidth={11} strokeLinecap="round" />
       <path d="M314,74 C270,74 240,64 212,58" fill="none" stroke="#1d9bf0" strokeWidth={11} strokeLinecap="round" />
 
+      {/* клубок: світний підшар пульсує — показує надлишковий скид */}
       <g
         fill="none"
         strokeWidth={6}
@@ -40,6 +42,7 @@ export function Avm({ animated = true, ...props }: VesselProps) {
         <path d="M150,36 C170,44 176,84 196,76" stroke="#ff6b6b" />
       </g>
 
+      {/* потік: артерія → клубок → вена, без капілярів */}
       <path
         d="M6,40 C50,40 80,52 110,58 C130,30 160,30 172,52 C182,70 206,72 212,58 C240,64 270,74 314,74"
         fill="none"

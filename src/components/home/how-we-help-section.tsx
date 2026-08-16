@@ -19,6 +19,7 @@ export function HowWeHelpSection() {
             key={item.title}
             title={item.title}
             description={item.description}
+            icon={item.icon}
           />
         ))}
       </div>

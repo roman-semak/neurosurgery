@@ -1,0 +1,30 @@
+/* globals.css — додати до існуючого @theme inline */
+
+  --animate-vflow-slow: vdash 8s linear infinite;
+  --animate-vflow-fast: vdash 5s linear infinite;
+  --animate-vpulse-slow: vpulse 5.2s ease-in-out infinite;
+
+/* --- додати до @layer components --- */
+
+@layer components {
+  /* судинна лінія-конектор: артерія → вена */
+  .vessel-line {
+    @apply rounded-full bg-linear-to-b from-artery via-artery-bright to-vein;
+  }
+  .vessel-line-x {
+    @apply rounded-full bg-linear-to-r from-artery via-artery-bright to-vein;
+  }
+  /* вузол на лінії шляху пацієнта */
+  .vessel-node {
+    @apply size-[15px] rounded-full border-[3px] border-artery-bright bg-elevated;
+    box-shadow: 0 0 12px rgb(230 57 70 / 0.6);
+  }
+}
+
+/* --- keyframes: додати поруч з наявними vpulse / vdash --- */
+
+@keyframes vdash-long {
+  to {
+    stroke-dashoffset: -640;
+  }
+}

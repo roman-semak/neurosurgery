@@ -1,11 +1,16 @@
+"use client";
+
 import type { ComponentType, SVGProps } from "react";
 
 import { Aneurysm } from "@/components/vessels/aneurysm";
 import { Avm } from "@/components/vessels/avm";
 import { Stenosis } from "@/components/vessels/stenosis";
 import { Stroke } from "@/components/vessels/stroke";
+import { useInView } from "@/lib/use-in-view";
 
-const ILLUSTRATIONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+type VesselProps = SVGProps<SVGSVGElement> & { animated?: boolean };
+
+const ILLUSTRATIONS: Record<string, ComponentType<VesselProps>> = {
   aneurysm: Aneurysm,
   avm: Avm,
   stenosis: Stenosis,
@@ -28,11 +33,12 @@ export function ConditionCard({
   howWeTreat,
 }: ConditionCardProps) {
   const Illustration = ILLUSTRATIONS[slug];
+  const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
-    <div className="glass flex flex-col gap-4 p-5 sm:p-6">
+    <div ref={ref} className="glass flex flex-col gap-4 p-5 sm:p-6">
       {Illustration ? (
-        <Illustration className="h-auto w-full" />
+        <Illustration animated={inView} className="h-auto w-full" />
       ) : null}
       <h3 className="font-heading text-[18px] font-semibold text-foreground">{title}</h3>
       <dl className="flex flex-col gap-3 text-sm text-ink-body">

@@ -7,6 +7,7 @@ type VesselProps = SVGProps<SVGSVGElement> & { animated?: boolean };
 export function Stroke({ animated = true, ...props }: VesselProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 110" aria-hidden="true" {...props}>
+      {/* судина до тромба — з кровотоком */}
       <path d="M6,55 C60,55 100,50 140,50" fill="none" stroke="#e63946" strokeWidth={11} strokeLinecap="round" />
       <path
         d="M6,55 C60,55 100,50 136,50"
@@ -20,9 +21,11 @@ export function Stroke({ animated = true, ...props }: VesselProps) {
         className={animated ? "animate-vflow-fast" : undefined}
       />
 
+      {/* знекровлені гілки за тромбом — приглушені, без потоку */}
       <path d="M140,50 C180,50 206,32 250,26" fill="none" stroke="#e63946" strokeWidth={8} strokeLinecap="round" opacity={0.22} />
       <path d="M140,50 C180,50 206,70 250,84" fill="none" stroke="#e63946" strokeWidth={8} strokeLinecap="round" opacity={0.22} />
 
+      {/* тромб */}
       <ellipse
         cx={140}
         cy={50}

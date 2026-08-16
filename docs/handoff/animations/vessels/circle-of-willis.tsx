@@ -5,7 +5,9 @@ import { useId, type SVGProps } from "react";
 import { cn } from "@/lib/utils";
 
 type CircleOfWillisProps = SVGProps<SVGSVGElement> & {
+  /** false — глушить пульсацію і кровотік (для екранів нижче згину) */
   animated?: boolean;
+  /** показати трасу кровотоку від сонної до базилярної артерії */
   flow?: boolean;
 };
 
@@ -76,6 +78,7 @@ export function CircleOfWillis({
         </g>
       </defs>
 
+      {/* вени: розмитий шар + чіткий */}
       <use
         href={`#${veins}`}
         filter={`url(#${glowV})`}
@@ -85,6 +88,7 @@ export function CircleOfWillis({
       />
       <use href={`#${veins}`} opacity={0.5} />
 
+      {/* артерії: розмитий шар + чіткий */}
       <use
         href={`#${art}`}
         filter={`url(#${glowA})`}
@@ -94,6 +98,7 @@ export function CircleOfWillis({
       />
       <use href={`#${art}`} />
 
+      {/* кровотік: іскра йде базилярною → внутрішньою сонною → до передньої мозкової */}
       {flow ? (
         <path
           d="M180,400 L180,322 L180,258 C170,250 161,247 150,247 C135,246 123,237 115,224 C106,197 111,169 126,146 C141,139 156,132 170,120 L190,120"
