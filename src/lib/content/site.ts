@@ -35,5 +35,6 @@ export const NAV_ITEMS = [
   { href: "/", label: "Головна" },
   { href: "/about", label: "Про лікаря" },
   { href: "/services", label: "Напрямки роботи" },
+  { href: "/cases", label: "Клінічні випадки" },
   { href: "/appointment", label: "Запис на консультацію" },
 ];

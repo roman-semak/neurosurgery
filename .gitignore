@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# raw source materials from the doctor (photos, notes) not meant for the repo
+/FILES/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
