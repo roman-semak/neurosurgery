@@ -24,7 +24,7 @@ export function Stenosis({ animated = true, ...props }: VesselProps) {
 
       <path
         d="M126,44 C148,44 150,54 168,54 C188,54 190,44 214,44 L214,70 C190,70 188,60 168,60 C150,60 148,70 126,70 Z"
-        fill="#0a2540"
+        fill="#fffaf0"
         opacity={0.55}
       />
 
@@ -51,11 +51,11 @@ export function Stenosis({ animated = true, ...props }: VesselProps) {
         className={animated ? "animate-vflow-slow" : undefined}
       />
 
-      <path d="M170,18 L170,34" stroke="#5dcaa5" strokeWidth={2.5} strokeLinecap="round" />
+      <path d="M170,18 L170,34" stroke="#35696e" strokeWidth={2.5} strokeLinecap="round" />
       <path
         d="M164,30 L170,36 L176,30"
         fill="none"
-        stroke="#5dcaa5"
+        stroke="#35696e"
         strokeWidth={2.5}
         strokeLinecap="round"
         strokeLinejoin="round"

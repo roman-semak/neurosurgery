@@ -24,7 +24,7 @@ function PhotoGrid({ photos }: { photos: CasePhoto[] }) {
       {photos.map((photo) => (
         <div
           key={photo.src}
-          className="relative aspect-square overflow-hidden rounded-lg border border-white/10"
+          className="relative aspect-square overflow-hidden rounded-lg border border-black/8"
         >
           <Image
             src={photo.src}

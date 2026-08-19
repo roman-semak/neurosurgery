@@ -81,7 +81,7 @@ export default function ServicesPage() {
           {PROCEDURES.map((procedure) => (
             <li
               key={procedure}
-              className="flex items-start gap-3 rounded-card border border-white/15 bg-white/5 p-4"
+              className="flex items-start gap-3 rounded-card border border-black/8 bg-white/60 p-4"
             >
               <CheckIcon className="mt-0.5 size-5 shrink-0 text-secondary" aria-hidden="true" />
               <span className="text-base text-foreground">{procedure}</span>
@@ -98,7 +98,7 @@ export default function ServicesPage() {
           {TREATED_CONDITIONS.map((condition) => (
             <li
               key={condition}
-              className="flex items-start gap-3 rounded-card border border-white/15 bg-white/5 p-4"
+              className="flex items-start gap-3 rounded-card border border-black/8 bg-white/60 p-4"
             >
               <CheckIcon className="mt-0.5 size-5 shrink-0 text-secondary" aria-hidden="true" />
               <span className="text-base text-foreground">{condition}</span>
@@ -116,7 +116,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section aria-labelledby="prepare-heading" className="mt-14 rounded-panel border border-white/20 bg-white/10 p-6 backdrop-blur-glass sm:p-8">
+      <section aria-labelledby="prepare-heading" className="mt-14 rounded-panel border border-black/8 bg-white/70 p-6 backdrop-blur-glass sm:p-8">
         <h2 id="prepare-heading" className="font-heading text-[24px] font-semibold tracking-[-0.4px] text-foreground sm:text-[30px] lg:text-[36px]">
           Що взяти на консультацію
         </h2>

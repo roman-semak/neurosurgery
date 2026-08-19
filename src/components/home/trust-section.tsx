@@ -3,7 +3,7 @@ import { TRUST_STATS } from "@/lib/content/doctor";
 
 export function TrustSection() {
   return (
-    <section className="relative overflow-hidden border-y border-white/10 bg-deep">
+    <section className="relative overflow-hidden border-y border-black/6 bg-deep">
       <div
         className="absolute -bottom-24 left-1/2 -z-10 size-96 -translate-x-1/2 rounded-full bg-accent/30 blur-3xl"
         aria-hidden="true"

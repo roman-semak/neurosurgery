@@ -31,7 +31,7 @@ export default function CasesPage() {
         </p>
       </div>
 
-      <div className="mt-8 rounded-panel border border-white/20 bg-white/10 p-6 backdrop-blur-glass sm:p-8">
+      <div className="mt-8 rounded-panel border border-black/8 bg-white/70 p-6 backdrop-blur-glass sm:p-8">
         <p className="text-sm leading-relaxed text-muted-foreground">
           Ідентифікатори пацієнтів анонімізовано (лише перша літера прізвища)
           для збереження конфіденційності.

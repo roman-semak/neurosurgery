@@ -9,7 +9,7 @@ import {
 
 export function HowItWorksSection() {
   return (
-    <section className="border-y border-white/8 bg-elevated py-8 sm:py-12 lg:py-16">
+    <section className="border-y border-black/6 bg-elevated py-8 sm:py-12 lg:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-12">
         <p className="font-heading text-xs font-semibold uppercase tracking-[2px] text-accent">
           Як це відбувається

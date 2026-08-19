@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export function FinalCtaSection() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-[34px] sm:px-6 sm:py-[52px] lg:px-12 lg:py-[76px]">
-      <div className="grid items-center gap-5 rounded-panel border border-accent/35 bg-linear-160 from-accent/15 to-white/6 p-6 shadow-glass sm:p-8 lg:grid-cols-[1fr_auto] lg:p-11">
+      <div className="grid items-center gap-5 rounded-panel border border-accent/35 bg-linear-160 from-accent/15 to-transparent p-6 shadow-glass sm:p-8 lg:grid-cols-[1fr_auto] lg:p-11">
         <div>
           <h2 className="font-heading text-[22px] font-semibold text-balance text-foreground sm:text-[30px] lg:text-[36px]">
             Опишіть ситуацію — я подивлюсь знімки

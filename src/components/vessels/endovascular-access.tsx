@@ -21,14 +21,14 @@ export function EndovascularAccess({ animated = true, ...props }: VesselProps) {
       <path
         d="M10,102 C74,102 112,86 152,66 C190,48 236,40 268,40"
         fill="none"
-        stroke="#5dcaa5"
+        stroke="#35696e"
         strokeWidth={4}
         strokeLinecap="round"
         strokeDasharray="300 40"
         data-flow=""
         className={animated ? "animate-vflow-fast" : undefined}
       />
-      <circle cx={268} cy={40} r={6} fill="#5dcaa5" data-pulse="" className={animated ? "animate-vpulse" : undefined} />
+      <circle cx={268} cy={40} r={6} fill="#35696e" data-pulse="" className={animated ? "animate-vpulse" : undefined} />
       <path
         d="M282,24 C296,20 302,32 292,38 C284,43 288,26 278,30"
         fill="none"

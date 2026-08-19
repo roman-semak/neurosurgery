@@ -110,7 +110,7 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <section aria-labelledby="why-heading" className="mt-12 rounded-panel border border-white/20 bg-white/10 p-6 backdrop-blur-glass sm:p-8">
+      <section aria-labelledby="why-heading" className="mt-12 rounded-panel border border-black/8 bg-white/70 p-6 backdrop-blur-glass sm:p-8">
         <h2 id="why-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
           Чому нейрохірургія
         </h2>

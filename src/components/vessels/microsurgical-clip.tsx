@@ -27,7 +27,7 @@ export function MicrosurgicalClip({ animated = true, ...props }: VesselProps) {
 
       <path d="M146,60 C146,26 190,26 186,58" fill="#ff6b6b" opacity={0.45} stroke="#ff6b6b" strokeWidth={3} />
 
-      <g stroke="#c5d8e8" strokeWidth={5} strokeLinecap="round">
+      <g stroke="#94a3ad" strokeWidth={5} strokeLinecap="round">
         <path d="M140,58 L192,52" />
         <path d="M140,68 L192,62" />
         <path d="M192,52 L214,44" />
@@ -39,7 +39,7 @@ export function MicrosurgicalClip({ animated = true, ...props }: VesselProps) {
         cy={40}
         r={20}
         fill="none"
-        stroke="#5dcaa5"
+        stroke="#35696e"
         strokeWidth={1.5}
         strokeDasharray="4 6"
         opacity={0.7}

@@ -25,7 +25,7 @@ export function PatientPath({ steps }: PatientPathProps) {
       {steps.map((item) => (
         <li
           key={item.step}
-          className="relative flex h-full flex-col gap-2 rounded-[20px] border border-white/15 bg-white/8 p-4 backdrop-blur-glass"
+          className="relative flex h-full flex-col gap-2 rounded-[20px] border border-black/8 bg-white/60 p-4 backdrop-blur-glass"
         >
           <span aria-hidden="true" className="vessel-node absolute -left-7.5 top-4.5 sm:hidden" />
           <span

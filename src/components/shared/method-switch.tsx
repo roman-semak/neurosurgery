@@ -28,7 +28,7 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
       <div
         role="tablist"
         aria-label="Метод лікування"
-        className="mb-3.5 flex max-w-105 gap-2 rounded-lg border border-white/12 bg-white/6 p-1"
+        className="mb-3.5 flex max-w-105 gap-2 rounded-lg border border-black/8 bg-black/3 p-1"
       >
         {methods.map((item) => (
           <button
@@ -40,7 +40,7 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
             className={cn(
               "min-h-11 flex-1 rounded-lg px-3 text-sm font-medium transition-colors",
               active === item.method
-                ? "bg-accent text-[#04211a]"
+                ? "bg-accent text-white"
                 : "text-muted-foreground hover:text-foreground"
             )}
           >
@@ -65,7 +65,7 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
               {current.procedures.map((procedure) => (
                 <li
                   key={procedure}
-                  className="rounded-[14px] border border-white/15 bg-white/5 px-4 py-3 text-sm text-foreground"
+                  className="rounded-[14px] border border-black/8 bg-white/60 px-4 py-3 text-sm text-foreground"
                 >
                   {procedure}
                 </li>

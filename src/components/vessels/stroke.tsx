@@ -28,13 +28,13 @@ export function Stroke({ animated = true, ...props }: VesselProps) {
         cy={50}
         rx={13}
         ry={11}
-        fill="#7a9cb5"
+        fill="#93a0a6"
         data-pulse=""
         className={animated ? "animate-vpulse-slow" : undefined}
       />
 
-      <circle cx={250} cy={26} r={4} fill="#7a9cb5" opacity={0.5} />
-      <circle cx={250} cy={84} r={4} fill="#7a9cb5" opacity={0.5} />
+      <circle cx={250} cy={26} r={4} fill="#93a0a6" opacity={0.5} />
+      <circle cx={250} cy={84} r={4} fill="#93a0a6" opacity={0.5} />
     </svg>
   );
 }

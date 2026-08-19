@@ -13,7 +13,7 @@ export function TrustStats({ stats }: TrustStatsProps) {
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="rounded-[18px] border border-white/[0.14] bg-white/[0.07] p-4 backdrop-blur-glass"
+          className="rounded-[18px] border border-black/7 bg-white/60 p-4 backdrop-blur-glass"
         >
           <dt className="sr-only">{stat.label}</dt>
           <dd className="font-heading text-[24px] leading-none font-bold text-ink-heading sm:text-[30px] lg:text-[36px]">

@@ -48,7 +48,7 @@ export default function AppointmentPage() {
           </div>
         </div>
 
-        <div className="rounded-panel border border-white/20 bg-white/10 p-6 shadow-glass backdrop-blur-glass sm:p-8">
+        <div className="rounded-panel border border-black/8 bg-white/70 p-6 shadow-glass backdrop-blur-glass sm:p-8">
           <AppointmentForm />
         </div>
       </div>
