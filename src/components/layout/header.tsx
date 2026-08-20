@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { MenuIcon } from "lucide-react";
+import { Brain, MenuIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -23,12 +23,13 @@ export function Header() {
 
   return (
     <header className="site-nav">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-end gap-4 px-4 sm:px-6 md:justify-between">
         <Link
           href="/"
-          className="flex-1 whitespace-nowrap font-heading text-lg font-semibold text-accent-bright"
+          aria-label={SITE_NAME}
+          className="hidden flex-1 items-center text-accent-bright md:flex"
         >
-          {SITE_NAME}
+          <Brain className="size-7" aria-hidden="true" />
         </Link>
 
         <nav

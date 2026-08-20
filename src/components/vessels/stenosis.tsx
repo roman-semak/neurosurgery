@@ -20,12 +20,10 @@ export function Stenosis({ animated = true, ...props }: VesselProps) {
         strokeWidth={3.5}
       />
 
-      <path d="M8,57 L312,57" fill="none" stroke="#ff6b6b" strokeWidth={26} opacity={0.28} />
-
       <path
-        d="M126,44 C148,44 150,54 168,54 C188,54 190,44 214,44 L214,70 C190,70 188,60 168,60 C150,60 148,70 126,70 Z"
-        fill="#fffaf0"
-        opacity={0.55}
+        d="M8,44 L124,44 C146,44 148,54 168,54 C188,54 190,44 216,44 L312,44 L312,70 L216,70 C190,70 188,60 168,60 C148,60 146,70 124,70 L8,70 Z"
+        fill="#ff6b6b"
+        opacity={0.28}
       />
 
       <path

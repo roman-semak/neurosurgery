@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CheckIcon } from "lucide-react";
 
-import { ConditionCard } from "@/components/shared/condition-card";
+import { ConditionTabs } from "@/components/shared/condition-tabs";
 import { MethodSwitch } from "@/components/shared/method-switch";
 import { PatientPath } from "@/components/shared/patient-path";
 import { ServiceCard } from "@/components/shared/service-card";
@@ -63,10 +63,8 @@ export default function ServicesPage() {
         >
           Судинні захворювання
         </h2>
-        <div className="mt-6 grid gap-5 sm:grid-cols-2">
-          {VASCULAR_CONDITIONS.map((condition) => (
-            <ConditionCard key={condition.slug} {...condition} />
-          ))}
+        <div className="mt-6">
+          <ConditionTabs conditions={VASCULAR_CONDITIONS} />
         </div>
       </section>
 
@@ -94,17 +92,11 @@ export default function ServicesPage() {
         <h2 id="treated-conditions-heading" className="font-heading text-[24px] font-semibold tracking-[-0.4px] text-foreground sm:text-[30px] lg:text-[36px]">
           Хвороби, які лікує відділення
         </h2>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {TREATED_CONDITIONS.map((condition) => (
-            <li
-              key={condition}
-              className="flex items-start gap-3 rounded-card border border-black/8 bg-white/60 p-4"
-            >
-              <CheckIcon className="mt-0.5 size-5 shrink-0 text-secondary" aria-hidden="true" />
-              <span className="text-base text-foreground">{condition}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="mt-6 rounded-card border border-black/8 bg-white/60 p-4 sm:p-6">
+          <p className="text-base leading-relaxed text-foreground">
+            {TREATED_CONDITIONS.join(", ")}
+          </p>
+        </div>
       </section>
 
       <section aria-labelledby="journey-heading" className="mt-14">

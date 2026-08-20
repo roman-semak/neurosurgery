@@ -1,4 +1,4 @@
-import { ConditionCard } from "@/components/shared/condition-card";
+import { ConditionTabs } from "@/components/shared/condition-tabs";
 import { MethodSwitch } from "@/components/shared/method-switch";
 import { PatientPath } from "@/components/shared/patient-path";
 import {
@@ -30,10 +30,8 @@ export function HowItWorksSection() {
           Що саме відбувається з судиною
         </h2>
         <p className="mt-2 text-sm text-ink-muted">Просте пояснення чотирьох станів.</p>
-        <div className="mt-[18px] grid gap-3.5 sm:grid-cols-2">
-          {VASCULAR_CONDITIONS.map((c) => (
-            <ConditionCard key={c.slug} {...c} />
-          ))}
+        <div className="mt-[18px]">
+          <ConditionTabs conditions={VASCULAR_CONDITIONS} />
         </div>
 
         <h2 className="mt-[34px] font-heading text-[24px] font-semibold tracking-[-0.4px] text-foreground sm:mt-[52px] sm:text-[30px] lg:mt-[76px] lg:text-[36px]">

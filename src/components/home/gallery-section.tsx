@@ -10,35 +10,66 @@ import {
 } from "@/components/ui/dialog";
 import { GALLERY_PHOTOS } from "@/lib/content/gallery";
 
-const AUTOPLAY_INTERVAL_MS = 4000;
+const SCROLL_SPEED_PX_PER_SEC = 40;
+
+const LOOP_PHOTOS = [...GALLERY_PHOTOS, ...GALLERY_PHOTOS];
 
 export function GallerySection() {
   const trackRef = useRef<HTMLDivElement>(null);
-  const indexRef = useRef(0);
   const pausedRef = useRef(false);
+  const dialogOpenRef = useRef(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
-    const timer = window.setInterval(() => {
-      if (pausedRef.current || openIndex !== null) return;
+    // Position is tracked in this float accumulator, not read back from
+    // track.scrollLeft — the DOM rounds scrollLeft to an integer, which would
+    // swallow each frame's sub-pixel increment before it could add up.
+    let position = 0;
+    let wrapWidth = track.scrollWidth / 2;
+    const resizeObserver = new ResizeObserver(() => {
+      wrapWidth = track.scrollWidth / 2;
+    });
+    resizeObserver.observe(track);
 
-      const slides = track.children;
-      indexRef.current = (indexRef.current + 1) % slides.length;
-      const nextSlide = slides[indexRef.current] as HTMLElement;
-      track.scrollTo({ left: nextSlide.offsetLeft, behavior: "smooth" });
-    }, AUTOPLAY_INTERVAL_MS);
+    let raf: number;
+    let last = performance.now();
 
-    return () => window.clearInterval(timer);
-  }, [openIndex]);
+    const step = (now: number) => {
+      const dt = now - last;
+      last = now;
+
+      if (!pausedRef.current && !dialogOpenRef.current) {
+        position += (SCROLL_SPEED_PX_PER_SEC * dt) / 1000;
+        if (position >= wrapWidth) position -= wrapWidth;
+        track.scrollLeft = position;
+      }
+
+      raf = requestAnimationFrame(step);
+    };
+
+    raf = requestAnimationFrame(step);
+    return () => {
+      cancelAnimationFrame(raf);
+      resizeObserver.disconnect();
+    };
+  }, []);
 
   const pause = () => {
     pausedRef.current = true;
   };
   const resume = () => {
     pausedRef.current = false;
+  };
+  const openPhoto = (index: number) => {
+    dialogOpenRef.current = true;
+    setOpenIndex(index);
+  };
+  const closePhoto = () => {
+    dialogOpenRef.current = false;
+    setOpenIndex(null);
   };
 
   return (
@@ -57,31 +88,29 @@ export function GallerySection() {
         onTouchEnd={resume}
         onFocus={pause}
         onBlur={resume}
-        className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="mt-10 flex h-64 gap-4 overflow-x-hidden sm:h-72 lg:h-80"
       >
-        {GALLERY_PHOTOS.map((photo, index) => (
+        {LOOP_PHOTOS.map((photo, index) => (
           <button
-            key={photo.src}
+            key={`${photo.src}-${index}`}
             type="button"
-            onClick={() => setOpenIndex(index)}
+            onClick={() => openPhoto(index % GALLERY_PHOTOS.length)}
             aria-label="Відкрити фото на весь екран"
-            className="relative aspect-[4/3] w-[80%] shrink-0 snap-center overflow-hidden rounded-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary sm:w-[46%] lg:w-[31%]"
+            style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
+            className="relative h-full shrink-0 overflow-hidden rounded-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
           >
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
-              sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 80vw"
+              sizes="(min-width: 1024px) 420px, (min-width: 640px) 360px, 300px"
               className="object-cover"
             />
           </button>
         ))}
       </div>
 
-      <Dialog
-        open={openIndex !== null}
-        onOpenChange={(open) => setOpenIndex(open ? openIndex : null)}
-      >
+      <Dialog open={openIndex !== null} onOpenChange={(open) => !open && closePhoto()}>
         <DialogContent className="w-[calc(100%-1rem)] max-w-5xl p-2 sm:p-2">
           <DialogTitle className="sr-only">
             {openIndex !== null ? GALLERY_PHOTOS[openIndex].alt : ""}

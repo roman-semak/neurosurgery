@@ -30,7 +30,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none">
+      <div className="order-1 mx-auto w-full max-w-sm lg:order-2 lg:mx-auto lg:max-w-md">
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-card">
           <Image
             src="/images/doctor-portrait.jpg"

@@ -31,13 +31,6 @@ export default function CasesPage() {
         </p>
       </div>
 
-      <div className="mt-8 rounded-panel border border-black/8 bg-white/70 p-6 backdrop-blur-glass sm:p-8">
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          Ідентифікатори пацієнтів анонімізовано (лише перша літера прізвища)
-          для збереження конфіденційності.
-        </p>
-      </div>
-
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {PATIENT_CASES.map((patientCase) => (
           <PatientCaseCard key={patientCase.id} patientCase={patientCase} />
