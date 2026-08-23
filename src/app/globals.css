@@ -36,6 +36,26 @@
   --animate-vflow-slow: vdash 8s linear infinite;
   --animate-vflow-fast: vdash 5s linear infinite;
   --animate-vpulse-slow: vpulse 5.2s ease-in-out infinite;
+  --animate-flow-fast: vFlow 3.2s linear infinite;
+  --animate-flow-slow: vFlow 4.6s linear infinite;
+  --animate-flow-rush: vFlow 2.4s linear infinite;
+  --animate-flow-jet: vFlow 1.5s linear infinite;
+  --animate-flow-starved: vFlow 5.4s linear infinite;
+  --animate-wall-pulse: wallPulse 3.4s ease-in-out infinite;
+  --animate-wall-pulse-fast: wallPulse 2.2s ease-in-out infinite;
+  --animate-sac-fill: sacFill 3.4s ease-in-out infinite;
+  --animate-coil-in: coilIn 3.4s ease-in-out infinite;
+  --animate-nidus-flicker: nidusFlicker 2.8s ease-in-out infinite;
+  --animate-pressure: pressure 2.6s ease-in-out infinite;
+  --animate-ischemia: ischemia 4s ease-in-out infinite;
+  --animate-clot-push: clotPush 2s ease-in-out infinite;
+  --animate-flow-main: flowMain 4s linear infinite;
+  --animate-wall-breathe: wallBreathe 3.6s ease-in-out infinite;
+  --animate-tip-glow: tipGlow 2s ease-in-out infinite;
+  --animate-contrast-wash: contrastWash 2.8s ease-in-out infinite;
+  --animate-coil-settle: coilSettle 4s ease-in-out infinite;
+  --animate-sac-quiet: sacQuiet 3.6s ease-in-out infinite;
+  --animate-mesh-in: meshIn 3.4s ease-in-out infinite;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -247,9 +267,159 @@
   }
 }
 
+@keyframes vFlow {
+  to {
+    stroke-dashoffset: -420;
+  }
+}
+@keyframes wallPulse {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.34;
+    transform: scaleY(1.06);
+  }
+}
+@keyframes sacFill {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: scale(0.94);
+  }
+  45% {
+    opacity: 0.5;
+    transform: scale(1.06);
+  }
+}
+@keyframes coilIn {
+  0%,
+  55% {
+    stroke-dashoffset: 210;
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  92%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+@keyframes nidusFlicker {
+  0%,
+  100% {
+    opacity: 0.32;
+  }
+  30% {
+    opacity: 0.62;
+  }
+  55% {
+    opacity: 0.38;
+  }
+  78% {
+    opacity: 0.7;
+  }
+}
+@keyframes pressure {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+@keyframes ischemia {
+  0% {
+    opacity: 0.5;
+  }
+  60%,
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes clotPush {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1.5px);
+  }
+}
+@keyframes flowMain {
+  to {
+    stroke-dashoffset: -420;
+  }
+}
+@keyframes wallBreathe {
+  0%,
+  100% {
+    opacity: 0.16;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+@keyframes tipGlow {
+  0%,
+  100% {
+    r: 6;
+    opacity: 0.9;
+  }
+  50% {
+    r: 9;
+    opacity: 0.55;
+  }
+}
+@keyframes contrastWash {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes coilSettle {
+  0% {
+    stroke-dashoffset: 260;
+  }
+  60%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sacQuiet {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.16;
+  }
+}
+@keyframes meshIn {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-pulse],
-  [data-flow] {
+  [data-flow],
+  [data-anim] {
     animation: none !important;
   }
 }

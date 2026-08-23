@@ -2,7 +2,15 @@ import type { MetadataRoute } from "next";
 
 import { SITE_URL } from "@/lib/content/site";
 
-const ROUTES = ["/", "/about", "/services", "/cases", "/appointment", "/privacy"];
+const ROUTES = [
+  "/",
+  "/about",
+  "/services",
+  "/services/endovascular",
+  "/cases",
+  "/appointment",
+  "/privacy",
+];
 
 // Bumped when route content changes; keeps lastModified stable instead of
 // always reporting "now" on every request.

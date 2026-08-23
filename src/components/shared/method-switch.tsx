@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 import { EndovascularAccess } from "@/components/vessels/endovascular-access";
 import { MicrosurgicalClip } from "@/components/vessels/microsurgical-clip";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 type TreatmentMethod = {
@@ -71,6 +73,11 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
                 </li>
               ))}
             </ul>
+            {active === "endovascular" ? (
+              <Button asChild variant="outline" className="mt-4">
+                <Link href="/services/endovascular">Докладніше про метод</Link>
+              </Button>
+            ) : null}
           </div>
         </div>
       ) : null}
