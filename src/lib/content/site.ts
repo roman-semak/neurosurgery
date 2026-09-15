@@ -9,9 +9,7 @@ export const SITE_DESCRIPTION =
   "Ігор Скорохода — лікар-нейрохірург вищої категорії, кандидат медичних наук, спеціаліст із судинної та ендоваскулярної нейрохірургії. Діагностика та лікування аневризм, судинних мальформацій і стенозів судин головного мозку та шиї в ДУ «Інститут нейрохірургії ім. акад. А.П. Ромоданова». Запис на консультацію онлайн.";
 
 export const CONTACT = {
-  phone: "+380 [XX] XXX XX XX",
-  phoneHref: "tel:+380000000000",
-  email: "[email@example.com]",
+  email: "skorohoda.md@gmail.com",
   address:
     "м. Київ, вул. Платона Майбороди, 32 (Інститут нейрохірургії ім. акад. А.П. Ромоданова)",
   // Separate, geocoder-friendly query for the map embed — includes the
@@ -19,17 +17,6 @@ export const CONTACT = {
   mapQuery: "Інститут нейрохірургії ім. акад. А.П. Ромоданова, вул. Платона Майбороди, 32, Київ",
   workingHours: "[Пн–Пт, 09:00–18:00]",
 };
-
-export const MESSENGERS = [
-  { name: "Viber", href: "https://viber.click/[номер]" },
-  { name: "Telegram", href: "https://t.me/[username]" },
-  { name: "WhatsApp", href: "https://wa.me/[номер]" },
-];
-
-export const SOCIALS = [
-  { name: "Facebook", href: "https://facebook.com/[сторінка]" },
-  { name: "Instagram", href: "https://instagram.com/[сторінка]" },
-];
 
 export const NAV_ITEMS = [
   { href: "/", label: "Головна" },

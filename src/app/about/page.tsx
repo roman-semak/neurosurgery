@@ -11,6 +11,9 @@ import {
   WHY_NEUROSURGERY,
 } from "@/lib/content/doctor";
 import { JsonLd } from "@/components/seo/json-ld";
+import { EndovascularText } from "@/components/shared/endovascular-text";
+import { PhotoCarousel } from "@/components/shared/photo-carousel";
+import { GALLERY_PHOTOS } from "@/lib/content/gallery";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
@@ -53,7 +56,9 @@ export default function AboutPage() {
         </h2>
         <div className="mt-4 flex flex-col gap-4 text-base leading-relaxed text-muted-foreground">
           {BIOGRAPHY_PARAGRAPHS.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index}>
+              <EndovascularText text={paragraph} />
+            </p>
           ))}
         </div>
       </section>
@@ -67,7 +72,9 @@ export default function AboutPage() {
             <li key={`${item.years}-${item.institution}`} className="flex flex-col gap-1 border-l-2 border-secondary/40 pl-4">
               <span className="text-sm font-medium text-secondary">{item.years}</span>
               <span className="font-medium text-foreground">{item.institution}</span>
-              <span className="text-sm text-muted-foreground">{item.degree}</span>
+              <span className="text-sm text-muted-foreground">
+                <EndovascularText text={item.degree} />
+              </span>
             </li>
           ))}
         </ul>
@@ -86,6 +93,13 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section aria-labelledby="operating-room-heading" className="mt-12">
+        <h2 id="operating-room-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
+          З операційної
+        </h2>
+        <PhotoCarousel photos={GALLERY_PHOTOS} className="mt-4" />
       </section>
 
       <section aria-labelledby="publications-heading" className="mt-12">
@@ -115,7 +129,7 @@ export default function AboutPage() {
           Чому нейрохірургія
         </h2>
         <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-          {WHY_NEUROSURGERY}
+          <EndovascularText text={WHY_NEUROSURGERY} />
         </p>
       </section>
     </div>

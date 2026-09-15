@@ -4,6 +4,7 @@ import type { ComponentType, SVGProps } from "react";
 import { useState } from "react";
 
 import { Aneurysm } from "@/components/vessels/aneurysm";
+import { EndovascularText } from "@/components/shared/endovascular-text";
 import { Avm } from "@/components/vessels/avm";
 import { Stenosis } from "@/components/vessels/stenosis";
 import { Stroke } from "@/components/vessels/stroke";
@@ -84,7 +85,9 @@ export function ConditionTabs({ conditions }: ConditionTabsProps) {
               <dt className="text-[11.5px] font-medium uppercase tracking-[1.6px] text-ink-muted">
                 Як лікуємо
               </dt>
-              <dd className="mt-1">{current.howWeTreat}</dd>
+              <dd className="mt-1">
+                <EndovascularText text={current.howWeTreat} />
+              </dd>
             </div>
           </dl>
         </div>

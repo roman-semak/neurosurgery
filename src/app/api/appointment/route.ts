@@ -45,8 +45,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: false,
-        message:
-          "Не вдалося надіслати заявку. Спробуйте пізніше або зателефонуйте нам.",
+        message: "Не вдалося надіслати заявку. Спробуйте пізніше.",
       },
       { status: 500 }
     );

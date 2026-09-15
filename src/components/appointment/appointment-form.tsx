@@ -19,6 +19,10 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import {
+  MESSAGE_PLACEHOLDER,
+  MESSAGE_TEMPLATE_HINTS,
+} from "@/lib/content/appointment";
+import {
   appointmentFormDefaultValues,
   appointmentFormSchema,
   type AppointmentFormValues,
@@ -156,13 +160,30 @@ export function AppointmentForm() {
           <FieldLabel htmlFor="message">
             Опис проблеми <span aria-hidden="true">*</span>
           </FieldLabel>
+          <div id="message-hints" className="text-sm text-muted-foreground">
+            <p>Щоб лікар одразу зрозумів ваш випадок, коротко опишіть:</p>
+            <ul className="mt-1.5 grid gap-1">
+              {MESSAGE_TEMPLATE_HINTS.map((hint) => (
+                <li key={hint} className="flex items-start gap-2">
+                  <span
+                    className="mt-[0.55em] size-1 shrink-0 rounded-full bg-accent-bright"
+                    aria-hidden="true"
+                  />
+                  {hint}
+                </li>
+              ))}
+            </ul>
+          </div>
           <FieldContent>
             <Textarea
               id="message"
-              rows={5}
+              rows={8}
+              placeholder={MESSAGE_PLACEHOLDER}
               aria-required="true"
               aria-invalid={!!errors.message}
-              aria-describedby={errors.message ? "message-error" : undefined}
+              aria-describedby={
+                errors.message ? "message-hints message-error" : "message-hints"
+              }
               {...register("message")}
             />
             <FieldError id="message-error" errors={[errors.message]} />

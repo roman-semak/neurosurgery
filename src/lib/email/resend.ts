@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 
+import { CONTACT } from "@/lib/content/site";
 import type { AppointmentFormValues } from "@/lib/validations/appointment-schema";
 import {
   buildAppointmentEmailSubject,
@@ -13,7 +14,11 @@ type AppointmentEmailData = Pick<
 
 export async function sendAppointmentEmail(data: AppointmentEmailData) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.DOCTOR_EMAIL_TO ?? "doctor@example.com";
+  // Comma-separated, so a tester can receive copies: "a@x.com,b@y.com".
+  const to = (process.env.DOCTOR_EMAIL_TO || CONTACT.email)
+    .split(",")
+    .map((address) => address.trim())
+    .filter(Boolean);
   const from = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
   const subject = buildAppointmentEmailSubject(data);
   const text = buildAppointmentEmailText(data);

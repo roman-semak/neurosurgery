@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 import { EndovascularAccess } from "@/components/vessels/endovascular-access";
+import { EndovascularText } from "@/components/shared/endovascular-text";
 import { MicrosurgicalClip } from "@/components/vessels/microsurgical-clip";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -62,14 +63,14 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
           </div>
 
           <div className="p-5 sm:p-6">
-            <p className="text-base text-ink-body">{current.description}</p>
+            <p className="text-base text-ink-body"><EndovascularText text={current.description} /></p>
             <ul className="mt-4 flex flex-col gap-2">
               {current.procedures.map((procedure) => (
                 <li
                   key={procedure}
                   className="rounded-[14px] border border-black/8 bg-white/60 px-4 py-3 text-sm text-foreground"
                 >
-                  {procedure}
+                  <EndovascularText text={procedure} />
                 </li>
               ))}
             </ul>

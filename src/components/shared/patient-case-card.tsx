@@ -17,6 +17,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import type { CasePhoto, PatientCase } from "@/lib/content/patient-cases";
+import { EndovascularText } from "@/components/shared/endovascular-text";
 
 function PhotoGrid({ photos }: { photos: CasePhoto[] }) {
   return (
@@ -63,7 +64,9 @@ export function PatientCaseCard({ patientCase }: { patientCase: PatientCase }) {
           <DialogTitle>
             {patientCase.identifier} · {patientCase.ageSex}
           </DialogTitle>
-          <DialogDescription>{patientCase.diagnosis}</DialogDescription>
+          <DialogDescription>
+            <EndovascularText text={patientCase.diagnosis} />
+          </DialogDescription>
         </DialogHeader>
         <div className="grid gap-6 sm:grid-cols-2">
           <div>

@@ -6,6 +6,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { EndovascularText } from "@/components/shared/endovascular-text";
 
 type ServiceCardProps = {
   title: string;
@@ -26,7 +27,7 @@ export function ServiceCard({ title, description, icon: Icon }: ServiceCardProps
           <CardTitle className="text-lg">{title}</CardTitle>
         </div>
         <CardDescription className="text-base leading-relaxed">
-          {description}
+          <EndovascularText text={description} />
         </CardDescription>
       </CardHeader>
     </Card>

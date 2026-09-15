@@ -8,13 +8,19 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { GALLERY_PHOTOS } from "@/lib/content/gallery";
+import type { GalleryPhoto } from "@/lib/content/gallery";
 
 const SCROLL_SPEED_PX_PER_SEC = 40;
 
-const LOOP_PHOTOS = [...GALLERY_PHOTOS, ...GALLERY_PHOTOS];
+type PhotoCarouselProps = {
+  photos: GalleryPhoto[];
+  className?: string;
+};
 
-export function GallerySection() {
+// Auto-scrolling photo strip with a fullscreen lightbox. Layout (container,
+// heading, spacing) is left to the parent page.
+export function PhotoCarousel({ photos, className }: PhotoCarouselProps) {
+  const loopPhotos = [...photos, ...photos];
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
   const dialogOpenRef = useRef(false);
@@ -73,11 +79,7 @@ export function GallerySection() {
   };
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-      <h2 className="text-center font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">
-        З операційної
-      </h2>
-
+    <div className={className}>
       <div
         ref={trackRef}
         // onMouseMove, not onMouseEnter: scrolling the page under a stationary
@@ -88,13 +90,13 @@ export function GallerySection() {
         onTouchEnd={resume}
         onFocus={pause}
         onBlur={resume}
-        className="mt-10 flex h-64 gap-4 overflow-x-hidden sm:h-72 lg:h-80"
+        className="flex h-64 gap-4 overflow-x-hidden sm:h-72 lg:h-80"
       >
-        {LOOP_PHOTOS.map((photo, index) => (
+        {loopPhotos.map((photo, index) => (
           <button
             key={`${photo.src}-${index}`}
             type="button"
-            onClick={() => openPhoto(index % GALLERY_PHOTOS.length)}
+            onClick={() => openPhoto(index % photos.length)}
             aria-label="Відкрити фото на весь екран"
             style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
             className="relative h-full shrink-0 overflow-hidden rounded-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
@@ -113,13 +115,13 @@ export function GallerySection() {
       <Dialog open={openIndex !== null} onOpenChange={(open) => !open && closePhoto()}>
         <DialogContent className="w-[calc(100%-1rem)] max-w-5xl p-2 sm:p-2">
           <DialogTitle className="sr-only">
-            {openIndex !== null ? GALLERY_PHOTOS[openIndex].alt : ""}
+            {openIndex !== null ? photos[openIndex].alt : ""}
           </DialogTitle>
           {openIndex !== null && (
             <div className="relative h-[80vh] w-full overflow-hidden rounded-panel">
               <Image
-                src={GALLERY_PHOTOS[openIndex].src}
-                alt={GALLERY_PHOTOS[openIndex].alt}
+                src={photos[openIndex].src}
+                alt={photos[openIndex].alt}
                 fill
                 sizes="90vw"
                 className="object-contain"
@@ -128,6 +130,6 @@ export function GallerySection() {
           )}
         </DialogContent>
       </Dialog>
-    </section>
+    </div>
   );
 }

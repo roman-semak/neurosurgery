@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 import { AppointmentForm } from "@/components/appointment/appointment-form";
+import { ConditionSearch } from "@/components/appointment/condition-search";
 import { LocationMap } from "@/components/shared/location-map";
+import { PhotoCarousel } from "@/components/shared/photo-carousel";
+import { INSTITUTE_PHOTOS } from "@/lib/content/gallery";
 import { CONTACT } from "@/lib/content/site";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb-schema";
@@ -32,19 +35,13 @@ export default function AppointmentPage() {
             Запис на консультацію
           </h1>
           <p className="mt-4 max-w-115 text-[15px] text-pretty text-muted-foreground">
-            Заповніть форму нижче — ми зателефонуємо або напишемо вам, щоб
-            узгодити зручний день і час консультації. Якщо зручніше, ви також
-            можете зателефонувати нам напряму: {" "}
-            <a href={CONTACT.phoneHref} className="font-medium text-accent-bright hover:underline">
-              {CONTACT.phone}
-            </a>
-            .
+            Запис на консультацію відбувається лише через форму. Заповніть її —
+            ми зв&apos;яжемося з вами, щоб узгодити зручний день і час
+            консультації.
           </p>
-          <div className="mt-5 flex flex-col gap-2.5 text-sm text-ink-muted">
-            <div>{CONTACT.address}</div>
-            <a href={CONTACT.phoneHref} className="text-accent-bright hover:underline">
-              {CONTACT.phone}
-            </a>
+          <div className="mt-5 text-sm text-ink-muted">{CONTACT.address}</div>
+          <div className="mt-6">
+            <ConditionSearch />
           </div>
         </div>
 
@@ -61,6 +58,31 @@ export default function AppointmentPage() {
         <div className="mt-4">
           <LocationMap query={CONTACT.mapQuery} title="Карта проїзду до клініки" />
         </div>
+
+        <h3 className="mt-10 font-heading text-[18px] font-semibold text-foreground sm:text-[20px]">
+          Інститут нейрохірургії ім. акад. А.П. Ромоданова
+        </h3>
+        <PhotoCarousel photos={INSTITUTE_PHOTOS} className="mt-4" />
+        <p className="mt-3 text-xs text-ink-muted">
+          Фото: Wikimedia Commons —{" "}
+          {INSTITUTE_PHOTOS.map((photo, index) =>
+            photo.credit ? (
+              <span key={photo.src}>
+                {index > 0 ? ", " : null}
+                <a
+                  href={photo.credit.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-foreground"
+                >
+                  {photo.credit.author}
+                </a>{" "}
+                ({photo.credit.license})
+              </span>
+            ) : null
+          )}
+          .
+        </p>
       </section>
     </div>
   );

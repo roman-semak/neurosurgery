@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { CircleOfWillis } from "@/components/vessels/circle-of-willis";
+import { EndovascularText } from "@/components/shared/endovascular-text";
 import { Button } from "@/components/ui/button";
 import { DOCTOR } from "@/lib/content/doctor";
 
@@ -11,7 +12,7 @@ export function HeroSection() {
       <div className="relative order-2 flex flex-col items-start gap-6 lg:order-1">
         <CircleOfWillis className="pointer-events-none absolute -top-20 -left-20 -z-10 h-100 w-100 opacity-40 sm:-top-24 sm:-left-24 sm:h-120 sm:w-120 sm:opacity-50 lg:-top-28 lg:-left-16 lg:h-135 lg:w-135 lg:opacity-55" />
         <p className="rounded-full bg-accent/15 px-4 py-1.5 text-sm font-medium text-accent-bright [text-shadow:0_0_10px_var(--canvas)]">
-          {DOCTOR.specialization}
+          <EndovascularText text={DOCTOR.specialization} />
         </p>
         <h1 className="font-heading text-[34px] font-semibold leading-[1.08] tracking-[-1px] text-balance text-foreground [text-shadow:0_0_16px_var(--canvas),0_0_32px_var(--canvas)] sm:text-[46px] lg:text-[60px]">
           {DOCTOR.fullName}
