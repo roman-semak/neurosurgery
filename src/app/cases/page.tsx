@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { EndovascularCallout } from "@/components/shared/endovascular-callout";
 import { PatientCaseCard } from "@/components/shared/patient-case-card";
 import { PATIENT_CASES } from "@/lib/content/patient-cases";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -36,6 +37,8 @@ export default function CasesPage() {
           <PatientCaseCard key={patientCase.id} patientCase={patientCase} />
         ))}
       </div>
+
+      <EndovascularCallout className="mt-10" />
     </div>
   );
 }

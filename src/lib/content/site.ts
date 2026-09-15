@@ -22,6 +22,7 @@ export const NAV_ITEMS = [
   { href: "/", label: "Головна" },
   { href: "/about", label: "Про лікаря" },
   { href: "/services", label: "Напрямки роботи" },
+  { href: "/services/endovascular", label: "Ендоваскулярна хірургія" },
   { href: "/cases", label: "Клінічні випадки" },
   { href: "/appointment", label: "Запис на консультацію" },
 ];

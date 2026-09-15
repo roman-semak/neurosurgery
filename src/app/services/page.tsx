@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CheckIcon } from "lucide-react";
 
 import { ConditionTabs } from "@/components/shared/condition-tabs";
+import { EndovascularCallout } from "@/components/shared/endovascular-callout";
 import { EndovascularText } from "@/components/shared/endovascular-text";
 import { MethodSwitch } from "@/components/shared/method-switch";
 import { PatientPath } from "@/components/shared/patient-path";
@@ -42,6 +43,8 @@ export default function ServicesPage() {
           З якими проблемами варто звертатись та як влаштований шлях пацієнта.
         </p>
       </div>
+
+      <EndovascularCallout className="mt-8" />
 
       <section aria-labelledby="conditions-heading" className="mt-14">
         <h2 id="conditions-heading" className="font-heading text-[24px] font-semibold tracking-[-0.4px] text-foreground sm:text-[30px] lg:text-[36px]">

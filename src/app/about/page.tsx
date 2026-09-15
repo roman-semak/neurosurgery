@@ -11,6 +11,7 @@ import {
   WHY_NEUROSURGERY,
 } from "@/lib/content/doctor";
 import { JsonLd } from "@/components/seo/json-ld";
+import { EndovascularCallout } from "@/components/shared/endovascular-callout";
 import { EndovascularText } from "@/components/shared/endovascular-text";
 import { PhotoCarousel } from "@/components/shared/photo-carousel";
 import { GALLERY_PHOTOS } from "@/lib/content/gallery";
@@ -62,6 +63,8 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <EndovascularCallout className="mt-10" />
 
       <section aria-labelledby="education-heading" className="mt-12">
         <h2 id="education-heading" className="font-heading text-[24px] font-semibold text-foreground sm:text-[30px]">

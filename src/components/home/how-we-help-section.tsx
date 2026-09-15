@@ -1,3 +1,4 @@
+import { EndovascularCallout } from "@/components/shared/endovascular-callout";
 import { ServiceCard } from "@/components/shared/service-card";
 import { HOW_I_HELP } from "@/lib/content/services";
 
@@ -23,6 +24,8 @@ export function HowWeHelpSection() {
           />
         ))}
       </div>
+
+      <EndovascularCallout className="mt-3 sm:mt-5" />
     </section>
   );
 }

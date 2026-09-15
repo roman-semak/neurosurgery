@@ -34,7 +34,7 @@ export function Header() {
 
         <nav
           aria-label="Головна навігація"
-          className="hidden items-center gap-6 md:flex"
+          className="hidden items-center gap-4 md:flex lg:gap-6"
         >
           {primaryNavItems.map((item) => {
             const isActive = pathname === item.href;
@@ -44,7 +44,7 @@ export function Header() {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
+                  "text-sm font-medium whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground",
                   isActive && "text-accent-bright"
                 )}
               >
