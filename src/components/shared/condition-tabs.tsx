@@ -2,10 +2,10 @@
 
 import type { ComponentType, SVGProps } from "react";
 import { useState } from "react";
+import Image from "next/image";
 
 import { Aneurysm } from "@/components/vessels/aneurysm";
 import { EndovascularText } from "@/components/shared/endovascular-text";
-import { Avm } from "@/components/vessels/avm";
 import { Stenosis } from "@/components/vessels/stenosis";
 import { Stroke } from "@/components/vessels/stroke";
 import { cn } from "@/lib/utils";
@@ -14,9 +14,17 @@ type VesselProps = SVGProps<SVGSVGElement> & { animated?: boolean };
 
 const ILLUSTRATIONS: Record<string, ComponentType<VesselProps>> = {
   aneurysm: Aneurysm,
-  avm: Avm,
   stenosis: Stenosis,
   stroke: Stroke,
+};
+
+const IMAGES: Record<string, { src: string; width: number; height: number; alt: string }> = {
+  avm: {
+    src: "/images/illustrations/avm.jpg",
+    width: 1280,
+    height: 1242,
+    alt: "Артеріовенозна мальформація: клубок судин між артерією та веною мозку",
+  },
 };
 
 type VascularCondition = {
@@ -35,6 +43,7 @@ export function ConditionTabs({ conditions }: ConditionTabsProps) {
   const [active, setActive] = useState(conditions[0]?.slug ?? "");
   const current = conditions.find((c) => c.slug === active) ?? conditions[0];
   const Illustration = current ? ILLUSTRATIONS[current.slug] : undefined;
+  const image = current ? IMAGES[current.slug] : undefined;
 
   return (
     <div>
@@ -64,7 +73,18 @@ export function ConditionTabs({ conditions }: ConditionTabsProps) {
 
       {current ? (
         <div className="glass flex flex-col gap-4 p-5 sm:p-6">
-          {Illustration ? <Illustration animated className="h-auto w-full" /> : null}
+          {image ? (
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className="mx-auto h-auto max-h-105 w-auto max-w-full rounded-[14px]"
+            />
+          ) : Illustration ? (
+            <Illustration animated className="h-auto w-full" />
+          ) : null}
           <h3 className="font-heading text-[18px] font-semibold text-foreground">
             {current.title}
           </h3>

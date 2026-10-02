@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { EndovascularAccess } from "@/components/vessels/endovascular-access";
 import { EndovascularText } from "@/components/shared/endovascular-text";
-import { MicrosurgicalClip } from "@/components/vessels/microsurgical-clip";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -54,11 +54,23 @@ export function MethodSwitch({ methods }: MethodSwitchProps) {
 
       {current ? (
         <div className="glass grid overflow-hidden lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex items-center bg-deep px-0 py-2">
+          <div
+            className={cn(
+              "flex items-center",
+              active === "endovascular" ? "bg-deep px-0 py-2" : "bg-white"
+            )}
+          >
             {active === "endovascular" ? (
               <EndovascularAccess className="h-auto w-full" />
             ) : (
-              <MicrosurgicalClip className="h-auto w-full" />
+              <Image
+                src="/images/illustrations/aneurysm-clipping.jpg"
+                alt="Кліпування аневризми: кліпса перекриває шийку аневризми на артерії"
+                width={1280}
+                height={872}
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="h-auto w-full"
+              />
             )}
           </div>
 

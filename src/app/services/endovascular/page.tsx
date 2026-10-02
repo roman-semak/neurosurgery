@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { ProcedureWalkthrough } from "@/components/services/procedure-walkthrough";
-import { CoilDevice } from "@/components/vessels/coil-device";
-import { StentDevice } from "@/components/vessels/stent-device";
-import { FlowDiverter } from "@/components/vessels/flow-diverter";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb-schema";
@@ -22,12 +20,6 @@ export const metadata: Metadata = {
     "Покрокове пояснення ендоваскулярного втручання на судинах мозку: доступ через артерію, проведення катетера, ангіографія, встановлення спіралі чи стента. Що відчуває пацієнт і скільки триває відновлення.",
   alternates: { canonical: "/services/endovascular" },
 };
-
-const DEVICE_ILLUSTRATIONS = {
-  coil: CoilDevice,
-  stent: StentDevice,
-  "flow-diverter": FlowDiverter,
-} as const;
 
 export default function EndovascularPage() {
   return (
@@ -99,27 +91,30 @@ export default function EndovascularPage() {
           й розкриваються вже на місці.
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {PROCEDURE_DEVICES.map((device) => {
-            const Illustration = DEVICE_ILLUSTRATIONS[device.slug];
-            return (
-              <article
-                key={device.slug}
-                className="overflow-hidden rounded-[22px] border border-black/8 bg-elevated"
-              >
-                <div className="bg-canvas p-2.5">
-                  <Illustration />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-heading text-lg font-semibold text-foreground">
-                    {device.title}
-                  </h3>
-                  <p className="mt-1.5 text-[14.5px] text-pretty text-ink-body">
-                    {device.description}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
+          {PROCEDURE_DEVICES.map((device) => (
+            <article
+              key={device.slug}
+              className="overflow-hidden rounded-[22px] border border-black/8 bg-elevated"
+            >
+              <div className="relative aspect-4/3 bg-white">
+                <Image
+                  src={device.image.src}
+                  alt={device.image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="font-heading text-lg font-semibold text-foreground">
+                  {device.title}
+                </h3>
+                <p className="mt-1.5 text-[14.5px] text-pretty text-ink-body">
+                  {device.description}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
