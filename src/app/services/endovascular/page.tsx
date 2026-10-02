@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildBreadcrumbSchema } from "@/lib/seo/breadcrumb-schema";
 import {
+  COIL_STEPS_IMAGE,
   PROCEDURE_ADVANTAGES,
   PROCEDURE_DEVICES,
   PROCEDURE_FACTS,
@@ -116,6 +117,19 @@ export default function EndovascularPage() {
             </article>
           ))}
         </div>
+        <figure className="mt-4 overflow-hidden rounded-[22px] border border-black/8 bg-elevated">
+          <Image
+            src={COIL_STEPS_IMAGE.src}
+            alt={COIL_STEPS_IMAGE.alt}
+            width={COIL_STEPS_IMAGE.width}
+            height={COIL_STEPS_IMAGE.height}
+            sizes="(min-width: 1152px) 1056px, 100vw"
+            className="h-auto w-full"
+          />
+          <figcaption className="p-5 text-[14.5px] text-pretty text-ink-body">
+            {COIL_STEPS_IMAGE.caption}
+          </figcaption>
+        </figure>
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-6 px-4 pt-14 sm:px-6 lg:grid-cols-2 lg:px-12">
